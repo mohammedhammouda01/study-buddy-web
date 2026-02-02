@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
     --primary-color: #274c9b;
@@ -21,8 +24,10 @@ body {
 header {
     padding: 20px;
     box-shadow: 0 2px 5px rgb(29, 79, 150);
+    background: var(--background-color);
     position: sticky;
     top: 0;
+    z-index: 9999;
 }
 
 header nav {
@@ -71,11 +76,13 @@ header nav .nav-links a:hover {
     color: var(--primary-color);
 }
 
-section{
+section {
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    margin: 30px auto;
+    padding: 20px;
+    scroll-margin-top: 90px;
 }
+
 
 /* Dashboard */
 .summary-cards {
@@ -150,6 +157,67 @@ h1{
     border: none;
     cursor: pointer;
 }
+
+/* Tasks */
+.task-form, .task-controls {
+    margin: 20px 0;
+}
+
+.task-form input, 
+.task-form textarea, 
+.task-form select, 
+.task-form button {
+    display: block;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.task-form button {
+    width: auto;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#task-list .task-card {
+    background: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.task-card.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-card button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-card button.complete-btn {
+    background: green;
+    color: white;
+}
+
+.task-card button.edit-btn {
+    background: orange;
+    color: white;
+}
+
+.task-card button.delete-btn {
+    background: red;
+    color: white;
+}
+
 
 
 @media (max-width: 768px) {
