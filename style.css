@@ -1,31 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
-:root{
+
+:root {
     --primary-color: #274c9b;
     --secondary-color: #f88d1a;
     --background-color: #fff;
 }
+
 body {
     font-family: 'Bricolage Grotesque', sans-serif;
     background-color: var(--background-color);
     line-height: 1.6;
 }
-header{
+
+header {
     padding: 20px;
     box-shadow: 0 2px 5px rgb(29, 79, 150);
     position: sticky;
     top: 0;
 }
 
-header nav{
+header nav {
     position: relative;
     display: flex;
     align-items: center;
-    
+
 }
 
 header nav .nav-links {
@@ -42,7 +45,56 @@ header nav .nav-links a {
     font-weight: bold;
     transition: color 0.3s;
 }
+
 header nav .nav-links a:hover {
     color: var(--secondary-color);
 }
 
+.nav-link.active {
+    background-color: rgba(248, 141, 26, 0.2);
+    color: var(--secondary-color);
+    padding: 1px 10px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link.active:hover {
+    background-color: rgba(248, 141, 26, 0.3);
+    color: var(--secondary-color);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        box-shadow: none;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    header nav .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        transform: none;
+        width: 100%;
+        background: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgb(29, 79, 150);
+        display: none;
+    }
+
+    header nav .nav-links.show {
+        display: flex;
+    }
+}
