@@ -31,6 +31,51 @@
     </header>
 
     <main>
+       <section id="dashboard">
+    <h1>Dashboard</h1>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+        <div class="card">
+            <h3>Tasks Due Soon</h3>
+            <p id="tasks-due-soon">0</p>
+        </div>
+        <div class="card">
+            <h3>Completed Tasks</h3>
+            <p id="tasks-completed">0</p>
+        </div>
+        <div class="card">
+            <h3>Habit Streak (This Week)</h3>
+            <p id="habit-streak">0</p>
+        </div>
+    </div>
+
+    <!-- Today Section -->
+    <div class="today-section">
+        <h2>Today</h2>
+        <ul id="today-tasks">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <label for="progress">Progress</label>
+        <div class="progress-bar">
+            <div id="progress" class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Quick Add Task Form -->
+    <div class="quick-add">
+        <h2>Add Task</h2>
+        <form id="add-task-form">
+            <input type="text" id="task-title" placeholder="Task Title" required>
+            <input type="date" id="task-due" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+</section>
 
     </main>
     <footer>
