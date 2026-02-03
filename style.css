@@ -250,6 +250,11 @@ h1{
 }
 
 /* HABITS */
+
+.habit-form {
+    margin: 20px 0;
+}
+
 .habit-form input,
 .habit-form button {
     padding: 8px;
@@ -280,4 +285,46 @@ h1{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+}
+
+
+/* RESOURCES */
+.resources-controls {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.resources-controls input,
+.resources-controls select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.resource-card {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.resource-card a {
+    display: inline-block;
+    margin-top: 5px;
+    color: var(--primary-color);
+}
+
+.star {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    color: gray;
+}
+
+.star.fav {
+    color: gold;
 }

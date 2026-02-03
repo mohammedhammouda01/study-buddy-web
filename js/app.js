@@ -231,3 +231,99 @@ habitsList.addEventListener("change", e => {
 });
 
 renderHabits();
+
+
+//RESOURCES
+const resourcesList = document.getElementById("resources-list");
+const resourcesStatus = document.getElementById("resources-status");
+const resourceSearch = document.getElementById("resource-search");
+const resourceCategory = document.getElementById("resource-category");
+
+let resources = [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+// Fetch Resources
+async function loadResources() {
+    resourcesStatus.innerText = "Loading...";
+
+    try {
+        const res = await fetch("./resources.json");
+        if (!res.ok) throw new Error("Failed");
+
+        resources = await res.json();
+        resourcesStatus.innerText = "";
+        fillCategories();
+        renderResources();
+    } catch {
+        resourcesStatus.innerText = "Error loading resources.";
+    }
+}
+
+function fillCategories() {
+    const cats = [...new Set(resources.map(r => r.category))];
+    cats.forEach(cat => {
+        const opt = document.createElement("option");
+        opt.value = cat;
+        opt.innerText = cat;
+        resourceCategory.appendChild(opt);
+    });
+}
+
+function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function renderResources() {
+    const search = resourceSearch.value.toLowerCase();
+    const cat = resourceCategory.value;
+
+    let filtered = resources.filter(r =>
+        r.title.toLowerCase().includes(search)
+    );
+
+    if (cat !== "all") {
+        filtered = filtered.filter(r => r.category === cat);
+    }
+
+    resourcesList.innerHTML = "";
+
+    filtered.forEach(r => {
+        const isFav = favorites.includes(r.id);
+
+        const card = document.createElement("div");
+        card.className = "resource-card";
+
+        card.innerHTML = `
+            <h3>${r.title}</h3>
+            <p><strong>${r.category}</strong></p>
+            <p>${r.description}</p>
+            <a href="${r.link}" target="_blank">Visit</a>
+            <span class="star ${isFav ? "fav" : ""}" data-id="${r.id}">
+                ★
+            </span>
+        `;
+
+        resourcesList.appendChild(card);
+    });
+}
+
+// Favorite toggle
+resourcesList.addEventListener("click", e => {
+    if (!e.target.classList.contains("star")) return;
+
+    const id = Number(e.target.dataset.id);
+
+    if (favorites.includes(id)) {
+        favorites = favorites.filter(f => f !== id);
+    } else {
+        favorites.push(id);
+    }
+
+    saveFavorites();
+    renderResources();
+});
+
+resourceSearch.addEventListener("input", renderResources);
+resourceCategory.addEventListener("change", renderResources);
+
+loadResources();

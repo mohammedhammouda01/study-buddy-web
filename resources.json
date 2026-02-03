@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Basics",
+    "category": "Programming",
+    "link": "https://developer.mozilla.org",
+    "description": "Learn JS fundamentals."
+  },
+  {
+    "id": 2,
+    "title": "CSS Tricks",
+    "category": "Web Design",
+    "link": "https://css-tricks.com",
+    "description": "Tips and tricks for CSS."
+  },
+  {
+    "id": 3,
+    "title": "FreeCodeCamp",
+    "category": "Programming",
+    "link": "https://freecodecamp.org",
+    "description": "Free coding courses."
+  },
+  {
+    "id": 4,
+    "title": "Khan Academy",
+    "category": "Education",
+    "link": "https://khanacademy.org",
+    "description": "Learn math, science, and more."
+  },
+  {
+    "id": 5,
+    "title": "Coursera",
+    "category": "Education",
+    "link": "https://coursera.org",
+    "description": "Online university courses."
+  },
+  {
+    "id": 6,
+    "title": "YouTube JS Tutorial",
+    "category": "Programming",
+    "link": "https://youtube.com",
+    "description": "Video tutorials."
+  },
+  {
+    "id": 7,
+    "title": "Canva",
+    "category": "Design",
+    "link": "https://canva.com",
+    "description": "Design graphics easily."
+  },
+  {
+    "id": 8,
+    "title": "Figma",
+    "category": "Design",
+    "link": "https://figma.com",
+    "description": "UI/UX design tool."
+  },
+  {
+    "id": 9,
+    "title": "Notion",
+    "category": "Productivity",
+    "link": "https://notion.so",
+    "description": "Notes & organization."
+  },
+  {
+    "id": 10,
+    "title": "Google Scholar",
+    "category": "Research",
+    "link": "https://scholar.google.com",
+    "description": "Find research papers."
+  }
+]
