@@ -43,6 +43,13 @@ StudyBuddy هو تطبيق ويب من نوع **Single Page Application (SPA)** 
   - دعم كامل لـ Dark Mode.
 
 ![Website](images/screenshot/fullpage.png)
+![Dashboard](images/screenshot/Dashboard.png) 
+![Tasks](images/screenshot/Tasks.png) 
+![Habits](images/screenshot/Habits.png) 
+![Storage](images/screenshot/localstorage.png) 
+![Responsive](images/screenshot/mobileresponsive.png) 
+![Resources](images/screenshot/Resources.png) 
+![Settings](images/screenshot/Settings.png) 
 
 ## كيف أشغله
 1. استنساخ المشروع من GitHub:
