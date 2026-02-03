@@ -48,6 +48,3 @@ StudyBuddy هو تطبيق ويب من نوع **Single Page Application (SPA)** 
 
 ```bash
 git clone https://github.com/mohammedhammouda01/study-buddy-web.git
-
-
-![Website](images/screenshots/fullpage.png)
