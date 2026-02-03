@@ -327,3 +327,34 @@ resourceSearch.addEventListener("input", renderResources);
 resourceCategory.addEventListener("change", renderResources);
 
 loadResources();
+
+// THEME TOGGLE & RESET
+const themeToggle = document.getElementById("theme-toggle");
+const resetBtn = document.getElementById("reset-btn");
+
+// Load Theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.checked = true;
+}
+
+// Toggle Theme
+themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+        document.body.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Reset Data
+resetBtn.addEventListener("click", () => {
+    const confirmReset = confirm("Are you sure you want to reset all data?");
+    if (!confirmReset) return;
+
+    localStorage.clear();
+    location.reload();
+});

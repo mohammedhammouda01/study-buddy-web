@@ -328,3 +328,50 @@ h1{
 .star.fav {
     color: gold;
 }
+
+
+/* SETTINGS */
+
+.settings-card {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.settings-card button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: red;
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+/* DARK MODE */
+
+body.dark {
+    background: #121212;
+    color: var(--background-color);
+}
+
+body.dark header {
+    background: #1f1f1f;
+}
+
+body.dark .card,
+body.dark .task-card,
+body.dark .habit-card,
+body.dark .resource-card,
+body.dark .settings-card {
+    background: #2a2a2a;
+    color: var(--background-color);
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background: #333;
+    color: var(--background-color);
+    border: 1px solid #555;
+}
