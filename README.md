@@ -42,6 +42,7 @@ StudyBuddy هو تطبيق ويب من نوع **Single Page Application (SPA)** 
   - التنقل بين الأقسام بدون إعادة تحميل الصفحة.
   - دعم كامل لـ Dark Mode.
 
+![Website](images/screenshot/fullpage.png)
 
 ## كيف أشغله
 1. استنساخ المشروع من GitHub:
