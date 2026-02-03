@@ -47,9 +47,9 @@ StudyBuddy هو تطبيق ويب من نوع **Single Page Application (SPA)** 
 ![Tasks](images/screenshot/Tasks.png) 
 ![Habits](images/screenshot/Habits.png) 
 ![Storage](images/screenshot/localstorage.png) 
-![Responsive](images/screenshot/mobileresponsive.png) 
 ![Resources](images/screenshot/Resources.png) 
 ![Settings](images/screenshot/Settings.png) 
+![Dark Mode](images/screenshot/darkmode.png)
 
 ## كيف أشغله
 1. استنساخ المشروع من GitHub:
