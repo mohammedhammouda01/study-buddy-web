@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="images/compressed_113d7ccc3a08e9e5e9b8cc42ad990e45.jpeg">
+    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <title>StudyBuddy</title>
@@ -13,8 +13,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/compressed_113d7ccc3a08e9e5e9b8cc42ad990e45.jpeg" alt="StudyBuddy Logo" width="70px"
-                height="70px">
+            <img src="images/logo.png" alt="StudyBuddy Logo" width="70px" height="70px">
 
             <div class="menu-icon">
                 <i class="fa-solid fa-bars"></i>
@@ -25,16 +24,16 @@
                 <a href="#tasks" class="nav-link">Tasks</a>
                 <a href="#habits" class="nav-link">Habits</a>
                 <a href="#resources" class="nav-link">Resources</a>
-                <a href="#settings" class="nav-link">Settings</a>
+                <a href="#settings" class="nav-link">Settings / About</a>
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- Dashboard -->
         <section id="dashboard">
-            <h1>Dashboard</h1>
+            <h1><i class="fa-solid fa-chart-line"></i> Dashboard</h1>
 
-            <!-- Summary Cards -->
             <div class="summary-cards">
                 <div class="card">
                     <h3>Tasks Due Soon</h3>
@@ -50,15 +49,13 @@
                 </div>
             </div>
 
-            <!-- Today Section -->
             <div class="today-section">
                 <h2>Today</h2>
                 <ul id="today-tasks">
-                    <!-- Tasks will be added here dynamically -->
+
                 </ul>
             </div>
 
-            <!-- Progress Bar -->
             <div class="progress-container">
                 <label for="progress">Progress</label>
                 <div class="progress-bar">
@@ -66,7 +63,6 @@
                 </div>
             </div>
 
-            <!-- Quick Add Task Form -->
             <div class="quick-add">
                 <h2>Add Task</h2>
                 <form id="add-task-form">
@@ -77,24 +73,30 @@
             </div>
         </section>
 
-
+        <!-- Tasks -->
         <section id="tasks">
-            <h1>Tasks</h1>
-
-            <!-- Task Form -->
+            <h1><i class="fa-solid fa-list-check"></i> Tasks</h1>
             <div class="task-form">
                 <h2 id="form-title">Add Task</h2>
                 <form id="task-form">
+
+                    <label for="task-title-input">Title *</label>
                     <input type="text" id="task-title-input" placeholder="Title (required)" required>
+
+                    <label for="task-desc-input">Description</label>
                     <textarea id="task-desc-input" placeholder="Description (optional)"></textarea>
+
+                    <label for="task-due-input">Due Date *</label>
                     <input type="date" id="task-due-input" required>
 
+                    <label for="task-priority-input">Priority</label>
                     <select id="task-priority-input">
                         <option value="Low">Low Priority</option>
                         <option value="Medium">Medium Priority</option>
                         <option value="High">High Priority</option>
                     </select>
 
+                    <label for="task-category-input">Category</label>
                     <input type="text" id="task-category-input" placeholder="Category (optional)">
 
                     <button type="submit" id="task-submit-btn">Add Task</button>
@@ -103,7 +105,6 @@
                 <p id="form-error" style="color:red;"></p>
             </div>
 
-            <!-- Controls -->
             <div class="task-controls">
                 <label>Filter:
                     <select id="task-filter">
@@ -121,38 +122,32 @@
                 </label>
             </div>
 
-            <!-- Task List -->
             <div id="task-list">
-                <!-- Tasks will render here -->
+
             </div>
         </section>
 
-
+        <!-- Habits -->
         <section id="habits">
-            <h1>Habits</h1>
-
+            <h1><i class="fa-solid fa-fire"></i> Habits</h1>
             <div class="habit-form">
                 <h2>Add Habit</h2>
                 <form id="habit-form">
+                    <label for="habit-name">Habit Name *</label>
                     <input type="text" id="habit-name" placeholder="Habit Name (required)" required>
-
-                    <label>Goal (days per week 1–7)</label>
+                    <label for="habit-goal">Goal (days per week 1–7) *</label>
                     <input type="number" id="habit-goal" min="1" max="7" value="5" required>
-
                     <button type="submit">Add Habit</button>
                 </form>
             </div>
-
             <h2>Weekly Summary</h2>
             <p id="weekly-summary">0 / 0 goals achieved</p>
-
             <div id="habits-list"></div>
         </section>
 
-
+        <!-- Resources -->
         <section id="resources">
-            <h1>Resources</h1>
-
+            <h1><i class="fa-solid fa-book"></i> Resources</h1>
             <div class="resources-controls">
                 <input type="text" id="resource-search" placeholder="Search resources...">
 
@@ -162,15 +157,12 @@
             </div>
 
             <p id="resources-status"></p>
-
             <div id="resources-list"></div>
-
         </section>
 
-
+        <!-- Settings -->
         <section id="settings">
-            <h1>Settings</h1>
-
+            <h1><i class="fa-solid fa-gear"></i> Settings</h1>
             <div class="settings-card">
                 <h2>Theme</h2>
                 <label>
@@ -187,13 +179,12 @@
             <div class="settings-card">
                 <h2>About</h2>
                 <p>StudyBuddy is a simple productivity app to manage tasks, habits, and resources.</p>
-                <p><strong>Student Name:</strong> Mohammed Hammouda</p>
+                <p class="name"><strong>Student Name:</strong> Mohammed Hammouda</p>
             </div>
-
         </section>
     </main>
     <footer>
-
+        <p>&copy; 2026 StudyBuddy. All rights reserved.</p>
     </footer>
 
     <script type="module" src="js/app.js"></script>
