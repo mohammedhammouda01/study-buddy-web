@@ -248,3 +248,36 @@ h1{
         display: flex;
     }
 }
+
+/* HABITS */
+.habit-form input,
+.habit-form button {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.habit-form button {
+    background: var(--secondary-color);
+    color: var(--background-color);
+    border: none;
+}
+
+.habit-card {
+    background: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.habit-card h3 {
+    color: var(--primary-color);
+}
+
+.days {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}

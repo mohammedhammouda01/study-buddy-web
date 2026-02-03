@@ -129,3 +129,105 @@ taskSort.addEventListener("change", renderTasks);
 
 // Initial Render
 renderTasks();
+
+
+// HABITS
+const habitForm = document.getElementById("habit-form");
+const habitNameInput = document.getElementById("habit-name");
+const habitGoalInput = document.getElementById("habit-goal");
+const habitsList = document.getElementById("habits-list");
+const weeklySummary = document.getElementById("weekly-summary");
+
+let habits = JSON.parse(localStorage.getItem("habitsData")) || [];
+
+// Get Saturday of current week
+function getWeekStart() {
+    const today = new Date();
+    const day = today.getDay(); // 0 Sun - 6 Sat
+    const diff = today.getDate() - day;
+    return new Date(today.setDate(diff)).toDateString();
+}
+
+// Reset if new week
+function checkWeekReset() {
+    const currentWeek = getWeekStart();
+    habits.forEach(habit => {
+        if (habit.weekStartDate !== currentWeek) {
+            habit.progress = [false, false, false, false, false, false, false];
+            habit.weekStartDate = currentWeek;
+        }
+    });
+}
+checkWeekReset();
+
+function saveHabits() {
+    localStorage.setItem("habitsData", JSON.stringify(habits));
+}
+
+// Add Habit
+habitForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const habit = {
+        id: Date.now(),
+        name: habitNameInput.value.trim(),
+        goal: Number(habitGoalInput.value),
+        progress: [false, false, false, false, false, false, false],
+        weekStartDate: getWeekStart()
+    };
+
+    habits.push(habit);
+    saveHabits();
+    renderHabits();
+    habitForm.reset();
+});
+
+// Render Habits
+function renderHabits() {
+    habitsList.innerHTML = "";
+    let achieved = 0;
+
+    habits.forEach(habit => {
+        const doneCount = habit.progress.filter(v => v).length;
+        if (doneCount >= habit.goal) achieved++;
+
+        const card = document.createElement("div");
+        card.className = "habit-card";
+
+        const days = ["Sat","Sun","Mon","Tue","Wed","Thu","Fri"];
+
+        card.innerHTML = `
+            <h3>${habit.name}</h3>
+            <p>${doneCount} / ${habit.goal}</p>
+            <div class="days">
+                ${days.map((d,i)=>`
+                    <label>
+                        <input type="checkbox" data-id="${habit.id}" data-day="${i}"
+                        ${habit.progress[i] ? "checked":""}>
+                        ${d}
+                    </label>
+                `).join("")}
+            </div>
+        `;
+
+        habitsList.appendChild(card);
+    });
+
+    weeklySummary.innerText = `${achieved} / ${habits.length} goals achieved`;
+}
+
+// Toggle Day
+habitsList.addEventListener("change", e => {
+    if (!e.target.matches("input[type='checkbox']")) return;
+
+    const id = Number(e.target.dataset.id);
+    const day = Number(e.target.dataset.day);
+
+    const habit = habits.find(h => h.id === id);
+    habit.progress[day] = e.target.checked;
+
+    saveHabits();
+    renderHabits();
+});
+
+renderHabits();

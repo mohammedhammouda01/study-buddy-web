@@ -31,102 +31,123 @@
     </header>
 
     <main>
-       <section id="dashboard">
-    <h1>Dashboard</h1>
+        <section id="dashboard">
+            <h1>Dashboard</h1>
 
-    <!-- Summary Cards -->
-    <div class="summary-cards">
-        <div class="card">
-            <h3>Tasks Due Soon</h3>
-            <p id="tasks-due-soon">0</p>
-        </div>
-        <div class="card">
-            <h3>Completed Tasks</h3>
-            <p id="tasks-completed">0</p>
-        </div>
-        <div class="card">
-            <h3>Habit Streak (This Week)</h3>
-            <p id="habit-streak">0</p>
-        </div>
-    </div>
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="card">
+                    <h3>Tasks Due Soon</h3>
+                    <p id="tasks-due-soon">0</p>
+                </div>
+                <div class="card">
+                    <h3>Completed Tasks</h3>
+                    <p id="tasks-completed">0</p>
+                </div>
+                <div class="card">
+                    <h3>Habit Streak (This Week)</h3>
+                    <p id="habit-streak">0</p>
+                </div>
+            </div>
 
-    <!-- Today Section -->
-    <div class="today-section">
-        <h2>Today</h2>
-        <ul id="today-tasks">
-            <!-- Tasks will be added here dynamically -->
-        </ul>
-    </div>
+            <!-- Today Section -->
+            <div class="today-section">
+                <h2>Today</h2>
+                <ul id="today-tasks">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+            </div>
 
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <label for="progress">Progress</label>
-        <div class="progress-bar">
-            <div id="progress" class="progress-fill"></div>
-        </div>
-    </div>
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <label for="progress">Progress</label>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+            </div>
 
-    <!-- Quick Add Task Form -->
-    <div class="quick-add">
-        <h2>Add Task</h2>
-        <form id="add-task-form">
-            <input type="text" id="task-title" placeholder="Task Title" required>
-            <input type="date" id="task-due" required>
-            <button type="submit">Add Task</button>
-        </form>
-    </div>
-</section>
+            <!-- Quick Add Task Form -->
+            <div class="quick-add">
+                <h2>Add Task</h2>
+                <form id="add-task-form">
+                    <input type="text" id="task-title" placeholder="Task Title" required>
+                    <input type="date" id="task-due" required>
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+        </section>
 
 
-<section id="tasks">
-    <h1>Tasks</h1>
+        <section id="tasks">
+            <h1>Tasks</h1>
 
-    <!-- Task Form -->
-    <div class="task-form">
-        <h2 id="form-title">Add Task</h2>
-        <form id="task-form">
-            <input type="text" id="task-title-input" placeholder="Title (required)" required>
-            <textarea id="task-desc-input" placeholder="Description (optional)"></textarea>
-            <input type="date" id="task-due-input" required>
-            
-            <select id="task-priority-input">
-                <option value="Low">Low Priority</option>
-                <option value="Medium">Medium Priority</option>
-                <option value="High">High Priority</option>
-            </select>
+            <!-- Task Form -->
+            <div class="task-form">
+                <h2 id="form-title">Add Task</h2>
+                <form id="task-form">
+                    <input type="text" id="task-title-input" placeholder="Title (required)" required>
+                    <textarea id="task-desc-input" placeholder="Description (optional)"></textarea>
+                    <input type="date" id="task-due-input" required>
 
-            <input type="text" id="task-category-input" placeholder="Category (optional)">
-            
-            <button type="submit" id="task-submit-btn">Add Task</button>
-            <button type="button" id="task-cancel-btn" style="display:none;">Cancel</button>
-        </form>
-        <p id="form-error" style="color:red;"></p>
-    </div>
+                    <select id="task-priority-input">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium">Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
 
-    <!-- Controls -->
-    <div class="task-controls">
-        <label>Filter:
-            <select id="task-filter">
-                <option value="all">All</option>
-                <option value="active">Active</option>
-                <option value="completed">Completed</option>
-            </select>
-        </label>
+                    <input type="text" id="task-category-input" placeholder="Category (optional)">
 
-        <label>Sort By:
-            <select id="task-sort">
-                <option value="dueDate">Due Date</option>
-                <option value="priority">Priority</option>
-            </select>
-        </label>
-    </div>
+                    <button type="submit" id="task-submit-btn">Add Task</button>
+                    <button type="button" id="task-cancel-btn" style="display:none;">Cancel</button>
+                </form>
+                <p id="form-error" style="color:red;"></p>
+            </div>
 
-    <!-- Task List -->
-    <div id="task-list">
-        <!-- Tasks will render here -->
-    </div>
-</section>
+            <!-- Controls -->
+            <div class="task-controls">
+                <label>Filter:
+                    <select id="task-filter">
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </label>
 
+                <label>Sort By:
+                    <select id="task-sort">
+                        <option value="dueDate">Due Date</option>
+                        <option value="priority">Priority</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- Task List -->
+            <div id="task-list">
+                <!-- Tasks will render here -->
+            </div>
+        </section>
+
+
+        <section id="habits">
+            <h1>Habits</h1>
+
+            <div class="habit-form">
+                <h2>Add Habit</h2>
+                <form id="habit-form">
+                    <input type="text" id="habit-name" placeholder="Habit Name (required)" required>
+
+                    <label>Goal (days per week 1–7)</label>
+                    <input type="number" id="habit-goal" min="1" max="7" value="5" required>
+
+                    <button type="submit">Add Habit</button>
+                </form>
+            </div>
+
+            <h2>Weekly Summary</h2>
+            <p id="weekly-summary">0 / 0 goals achieved</p>
+
+            <div id="habits-list"></div>
+        </section>
     </main>
     <footer>
 
